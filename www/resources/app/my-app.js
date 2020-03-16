@@ -594,7 +594,7 @@ $$('body').on('click', 'a.external', function(event) {
     return false;
 });
 
-$$('body').on('click', '.center', function(){
+/*$$('body').on('click', '.center', function(){
     //var json = '{"title":"GEOLOCK WARNING","type":1024,"imei":"0000004700673137","name":"A16 WATCH","lat":43.895091666666666,"lng":125.29207,"speed":0,"direct":0,"time":"2018-08-23 16:56:36"}';
     //showMsgNotification([json]);
     //getNewData();
@@ -602,7 +602,7 @@ $$('body').on('click', '.center', function(){
 
     var json = '{"title":"Speed","type":32,"imei":"0352544074319915","name":"0352544074319915","lat":50.249984,"lng":32.282368,"speed":130,"direct":0,"time":"2018-08-23 16:56:37"}';
     setNotificationList([json]);
-});
+});*/
 
 /*$$('body').on('click', '.center', function(){
     getNewData();
@@ -5977,9 +5977,9 @@ function setAssetListPosInfo(listObj){
             setTimeout(function(){
                 if (!localStorage.ModalReview && localStorage.FirstLoginDone ) {
                     showAskForReviewMessage();
-                } else if(!localStorage.ModalReferral && localStorage.elem_rc_flag ){
+                } /*else if(!localStorage.ModalReferral && localStorage.elem_rc_flag ){
                     showReferralModal(true);
-                }
+                }*/
 
                 if (!localStorage.FirstLoginDone) {
                     localStorage.FirstLoginDone = true;
