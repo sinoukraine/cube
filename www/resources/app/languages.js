@@ -80,7 +80,7 @@ window.LanguagePackages= {
 		"PROMPT_MSG010": "Are you sure want to delete this notification?",
 		"PROMPT_MSG011": "Are you sure want to delete geofence?",
 		"PROMPT_MSG012": "Are you sure want to exit the application?",	
-		"PROMPT_MSG013": "Something wrong. Please, try again later",
+		"PROMPT_MSG013": "An issue has been detected, please try again later or contact our support team",
 		"PROMPT_MSG014": "Delete notification?",	
 		"PROMPT_MSG015": "Are you sure you want to close the application?",	
 		"PROMPT_MSG016": "Are you sure you want to delete all notifications?",		

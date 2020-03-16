@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-  version="1.4.36"
-  android-versionCode="200"
-  ios-CFBundleVersion="200"
-  id="com.sinopacific.quiktrak"
+  version="1.0.1"
+  android-versionCode="4"
+  ios-CFBundleVersion="4"
+  id="com.sinopacific.cube"
   xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" defaultlocale="en-US" >
-    <name>QuikTrak</name>
+    <name>Cube TrackIT</name>
     <description>
-       QuikTrak GPS tracker
+       Cube TrackIT GPS tracker
     </description>
     <author email="support@sinopacific.co" href="http://sinopacific.co">
        Sinopacific Co Limited
@@ -50,7 +50,7 @@
 
     <preference name="android-build-tool" value="gradle" />
     <plugin name="phonegap-plugin-push" source="npm" spec="2.1.2">
-        <variable name="SENDER_ID" value="106187216531" />
+        <variable name="SENDER_ID" value="1097482483564" />
     </plugin>
     <platform name="android">
       <resource-file src="google-services.json" target="app/google-services.json" />

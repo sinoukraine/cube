@@ -66,11 +66,11 @@ var pushConfigRetry = 0;
 
 var push = null;
 var AppDetails = {
-    name: 'QuikTrak-app',
-    code: 23,
-    supportCode: 3,
+    name: 'Cube-app',
+    code: 10,
+    supportCode: 9,
     appId: '',
-    appleId: '1079168431',
+    appleId: '1140410866',
 };
 
 if( navigator.userAgent.match(/Windows|Macintosh/i) ){
@@ -246,8 +246,8 @@ var App = new Framework7({
     swipePanel: 'left',
     allowDuplicateUrls: true,
     sortable: false,
-    modalTitle: 'QuikTrak',
-    notificationTitle: 'QuikTrak',
+    modalTitle: 'Cube TrackIT',
+    notificationTitle: 'Cube TrackIT',
     precompileTemplates: true,
     template7Pages: true,
     onAjaxStart: function(xhr){
@@ -348,7 +348,7 @@ API_URL.URL_SET_DOOR = API_DOMIAN4 + "asset/door?MajorToken={0}&MinorToken={1}&c
 API_URL.URL_ROUTE = "maps://maps.apple.com/maps?daddr={0},{1}"; // ios link
 API_URL.URL_REFRESH_TOKEN = API_DOMIAN1 + "User/RefreshToken";
 
-API_URL.URL_USERGUIDE = "https://quiktrakglobal.com/pdf/qt-app.pdf";
+API_URL.URL_USERGUIDE = "https://activation.cube.quiktrak.co/pdf/app-user-guide.pdf";
 API_URL.URL_REFERRAL_PROGRAM = "https://forms.quiktrak.com.au/referral-program/";
 
 var cameraButtons = [
@@ -368,7 +368,7 @@ var cameraButtons = [
     },
     {
         text: 'Cancel',
-        color: 'dealer',
+        color: 'red',
         onClick: function () {
             //App.alert('Cancel clicked');
         }
@@ -594,15 +594,15 @@ $$('body').on('click', 'a.external', function(event) {
     return false;
 });
 
-/*$$('body').on('click', '.center', function(){
+$$('body').on('click', '.center', function(){
     //var json = '{"title":"GEOLOCK WARNING","type":1024,"imei":"0000004700673137","name":"A16 WATCH","lat":43.895091666666666,"lng":125.29207,"speed":0,"direct":0,"time":"2018-08-23 16:56:36"}';
     //showMsgNotification([json]);
     //getNewData();
     //console.log($$('.status_page').length);
 
-    var json = '{"title":"Speed","type":32,"imei":"0000001683122697","name":"0000001683122697","lat":50.249984,"lng":32.282368,"speed":130,"direct":0,"time":"2018-08-23 16:56:37"}';
+    var json = '{"title":"Speed","type":32,"imei":"0352544074319915","name":"0352544074319915","lat":50.249984,"lng":32.282368,"speed":130,"direct":0,"time":"2018-08-23 16:56:37"}';
     setNotificationList([json]);
-});*/
+});
 
 /*$$('body').on('click', '.center', function(){
     getNewData();
@@ -1126,6 +1126,9 @@ App.onPageInit('asset.status', function (page) {
             }
         }
         var MaxSpeed = asset.MaxSpeed;
+        if (MaxSpeed && asset.Unit) {
+            MaxSpeed = Protocol.Helper.getSpeedValue(asset.Unit, MaxSpeed);
+        }
         //console.log(asset);
         mainView.router.load({
         url:'resources/templates/asset.edit.html',
@@ -1183,6 +1186,10 @@ App.onPageInit('asset.edit', function (page) {
     $$('.saveAssetEdit').on('click', function(){
         var Unit = $$(page.container).find('select[name="Unit"]').val();
         var MaxSpeed = $$(page.container).find('input[name="MaxSpeed"]').val();
+
+        if (MaxSpeed && Unit) {
+            MaxSpeed = Protocol.Helper.getSpeedValueInKM(Unit, MaxSpeed);
+        }
         var device = {
             IMEI: $$(page.container).find('input[name="IMEI"]').val(),
             Name: $$(page.container).find('input[name="Name"]').val(),
@@ -1226,7 +1233,7 @@ App.onPageInit('asset.edit', function (page) {
                     updateAssetList(device);
                     init_AssetList();
                 }else{
-                    App.alert('Something wrong');
+                    App.alert(LANGUAGE.PROMPT_MSG013);
                 }
                 App.hidePreloader();
             },
@@ -1288,7 +1295,7 @@ App.onPageInit('profile', function (page) {
 
                     mainView.router.back();
                 }else{
-                    App.alert('Something wrong');
+                    App.alert(LANGUAGE.PROMPT_MSG013);
                 }
                 App.hidePreloader();
             },
@@ -1343,7 +1350,7 @@ App.onPageInit('alarms.assets', function (page) {
                 }
             ret +=          '<div class="item-media"><i class="icon icon-form-checkbox"></i></div>';
             ret +=          '<div class="item-inner">';
-            ret +=              '<div class="item-title color-white">' + item.Name + '</div>';
+            ret +=              '<div class="item-title">' + item.Name + '</div>';
             ret +=          '</div>';
             ret +=      '</label>';
             ret +=  '</li>';
@@ -1479,7 +1486,7 @@ App.onPageInit('alarms.select', function(page) {
     overspeedRadioEl.on('change', function(e) {
         if (e.target.value == 2) {
             App.modal({
-                title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.png" alt=""/></div>',
+                title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.svg" alt=""/></div>',
                 text: '<div class="custom-modal-text">' + LANGUAGE.PROMPT_MSG060 + ':</div>',
                 afterText: `
                 <div class="list-block list-block-modal m-0 no-hairlines ">          
@@ -1746,7 +1753,7 @@ App.onPageInit('alarms.select', function(page) {
                     }
 
                 } else {
-                    App.alert('Something wrong');
+                    App.alert(LANGUAGE.PROMPT_MSG013);
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -1815,7 +1822,7 @@ App.onPageInit('geofence', function (page) {
                     '<div class="item-inner">' +
                     '<div class="item-title-row">' +
                     '<div class="item-title">'+ toTitleCase(item.Name) +'</div>' +
-                    '<div class="item-after "><a href="#" class="item-link geofence_menu"><i class="f7-icons icon-other-menu color-white"></i></a></div>' +
+                    '<div class="item-after "><a href="#" class="item-link geofence_menu"><i class="f7-icons icon-other-menu "></i></a></div>' +
                     '</div>' +
                     '<div class="item-text ">'+ item.Address +'</div>' +
                     '</div>' +
@@ -2352,7 +2359,7 @@ App.onPageInit('asset.alarm', function(page) {
     overspeedRadioEl.on('change', function(e) {
         if (e.target.value == 2) {
             App.modal({
-                title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.png" alt=""/></div>',
+                title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.svg" alt=""/></div>',
                 text: '<div class="custom-modal-text">' + LANGUAGE.PROMPT_MSG060 + ':</div>',
                 afterText: `
                 <div class="list-block list-block-modal m-0 no-hairlines ">          
@@ -2608,7 +2615,7 @@ App.onPageInit('asset.alarm', function(page) {
                     }
 
                 } else {
-                    App.alert('Something wrong');
+                    App.alert(LANGUAGE.PROMPT_MSG013);
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -3389,12 +3396,10 @@ function login(){
                     setUserinfo(result.Data);
                     setAssetList(result.Data.Devices);
                     updateUserCredits(result.Data.User.Credits);
-                    //alert('mobileToken: '+mobileToken+' appKey: '+appKey+' deviceToken: '+deviceToken+' deviceType: '+deviceType);
-                    afterLogin(result);
 
-                    //init_AssetList();
-                    //initSearchbar();
-                    //webSockConnect();
+                    //afterLogin(result);
+
+
                     getNewNotifications();
 
                     App.closeModal();
@@ -3811,16 +3816,16 @@ function getAssetImg(params, imgFor){
                         }
                     }
                 }
-                assetImg = '<div class="item_asset_img bg-white"><div class="text-a-c vertical-center user_f_l">'+one+two+'</div></div>';
+                assetImg = '<div class="item_asset_img bg-dealer color-white"><div class="text-a-c vertical-center user_f_l">'+one+two+'</div></div>';
             }else{
-                assetImg = '<div class="item_asset_img bg-white"><div class="text-a-c vertical-center user_f_l">'+params.Name[0]+params.Name[1]+'</div></div>';
+                assetImg = '<div class="item_asset_img bg-dealer color-white"><div class="text-a-c vertical-center user_f_l">'+params.Name[0]+params.Name[1]+'</div></div>';
             }
 
         }else if(params.IMEI){
-            assetImg = '<div class="item_asset_img bg-white"><div class="text-a-c vertical-center user_f_l">'+params.IMEI[0]+params.IMEI[1]+'</div></div>';
+            assetImg = '<div class="item_asset_img bg-dealer color-white"><div class="text-a-c vertical-center user_f_l">'+params.IMEI[0]+params.IMEI[1]+'</div></div>';
         }
     }else{
-        assetImg = '<div class="item_asset_img bg-white"><div class="text-a-c vertical-center user_f_l">?</div></div>';
+        assetImg = '<div class="item_asset_img bg-dealer color-white"><div class="text-a-c vertical-center user_f_l">?</div></div>';
     }
     return assetImg;
 }
@@ -4731,7 +4736,7 @@ function showNoCreditMessage(){
     var modalTex = '<div class="color-red custom-modal-title">'+ LANGUAGE.PROMPT_MSG032 +'</div>' +
                     '<div class="custom-modal-text">'+ LANGUAGE.PROMPT_MSG029 +'</div>';
     App.modal({
-           title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.png" alt=""/></div>',
+           title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.svg" alt=""/></div>',
             text: modalTex,
          buttons: [
             {
@@ -4802,7 +4807,7 @@ function showAskForReviewMessage(){
 
 
     var modal = App.modal({
-        title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.png" alt=""/></div>',
+        title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.svg" alt=""/></div>',
         text: '<div class="custom-modal-text">' + LANGUAGE.PROMPT_MSG053 +'</div>',
         afterText:  '<div class="list-block no-hairlines modal-checkbox">' +
                         '<ul>' +
@@ -4861,7 +4866,7 @@ function showCustomMessage(params){
     }
 
     App.modal({
-           title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.png" alt=""/></div>',
+           title: '<div class="custom-modal-logo-wrapper"><img class="custom-modal-logo" src="resources/images/logo.svg" alt=""/></div>',
             text: modalTex,
          buttons: [
             {
@@ -5533,7 +5538,7 @@ function getHisPosArray(from, to){
 	        }else if(result.MajorCode == '100' && result.MinorCode == '1002'){
                 App.alert(LANGUAGE.ASSET_PLAYBACK_MSG09);
             }else{
-                App.alert('Something wrong');
+                App.alert(LANGUAGE.PROMPT_MSG013);
             }
 	        App.hidePreloader();
 	    },
@@ -6861,7 +6866,7 @@ function saveImg(){
                 /*App.alert('Result Data:'+ result.Data);*/
                 TargetAsset.ASSET_IMG = result.Data;
             }else{
-                App.alert('Something wrong. Photo not saved');
+                App.alert(LANGUAGE.PROMPT_MSG013);
             }
             mainView.router.back();
         },

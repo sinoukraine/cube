@@ -39,13 +39,13 @@
                         <i class="pano_preview_img"></i>                                   
                     </a>
                 </div>
-                <div class="float_button_wrapper gprs_button_wrapper bg-color-page">
+                <!--<div class="float_button_wrapper gprs_button_wrapper bg-dealer">
                     <a href="#" class="link color-white sendPing">
                         <i class="f7-icons icon-header-update color-white"></i>
                         <span>{{@global.LANGUAGE.ASSET_TRACK_MSG15}}</span>                    
                     </a>
-                </div>
-                <div class="float_button_wrapper route_button_wrapper bg-color-page">
+                </div>-->
+                <div class="float_button_wrapper route_button_wrapper bg-dealer">
                     <a href="#" class="link color-white routeButton" data-lat="{{Lat}}" data-lng="{{Lng}}" >
                         <i class="f7-icons icon-other-route color-white"></i>
                         <span>{{@global.LANGUAGE.ASSET_TRACK_MSG16}}</span>                    
@@ -54,7 +54,7 @@
         	</div>
             <div class="position_bottom">
                 <div class="row">
-                    <div class="col-100 address color-white">                    
+                    <div class="col-100 address">
                         <div class="position_bottom_img_right">
                             <p class="display_address">{{Address}}</p>
                             <div class="item-subtext position_latlng">{{Coords}}</div>  
@@ -62,21 +62,21 @@
                     </div>
                 </div>
                 <div class="row no-gutter">
-                    <div class="col-33 color-white">
+                    <div class="col-33 ">
                         <!-- <img src="resources/images/svg_date.svg" alt=""> -->
-                        <i class="f7-icons icon-other-data color-white"></i>
+                        <i class="f7-icons icon-other-data color-dealer"></i>
                         <p>{{@global.LANGUAGE.ASSET_TRACK_MSG00}}</p>  
                         <p class="position_data position_time">{{Time}}</p>
                     </div> 
-                    <div class="col-33 color-white">
+                    <div class="col-33 ">
                         <!-- <img src="resources/images/svg_speed.svg" alt=""> -->
-                        <i class="f7-icons icon-other-speed color-white"></i>
+                        <i class="f7-icons icon-other-speed color-dealer"></i>
                         <p>{{@global.LANGUAGE.ASSET_TRACK_MSG02}}</p>  
                         <p class="position_data position_speed">{{Speed}}</p>
                     </div>
-                    <div class="col-33 color-white">
+                    <div class="col-33 ">
                         <!-- <img src="resources/images/svg_mileage.svg" alt=""> -->
-                        <i class="f7-icons icon-other-distance color-white"></i>
+                        <i class="f7-icons icon-other-distance color-dealer"></i>
                         <p >{{@global.LANGUAGE.ASSET_TRACK_MSG03}}</p>  
                         <p class="position_data position_mileage">{{Mileage}}</p>
                     </div>

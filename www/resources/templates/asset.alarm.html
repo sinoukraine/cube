@@ -31,14 +31,14 @@
 	<div class="page with-subnavbar bg-color-page alarm_page" data-page="asset.alarm">
 	  	<div class="page-content">  
 
-	  		<div class="content-block-title bw-li-switch layout-dark ">
+	  		<div class="content-block-title bw-li-switch  ">
                 {{@global.LANGUAGE.GEOFENCE_MSG_28}}
                 <label class="label-switch">
                     <input type="checkbox" name="ignoreBetween" {{#if IgnoreBetween}} checked="checked" {{/if}}>
                     <div class="checkbox"></div>
                 </label> 
             </div> 
-            <div class="list-block layout-dark list-block-input " >          
+            <div class="list-block  list-block-input " >
                 <ul> 
                     <li class="picker-el-wrapper {{#unless IgnoreBetween}} disabled {{/unless}}">
                         <a href="#" class="item-content item-link item-with-arrow">                               
@@ -84,14 +84,14 @@
                     </li>                
                 </ul>
             </div>	  		
-	  		<div class="content-block-title bw-li-switch layout-dark ">
+	  		<div class="content-block-title bw-li-switch  ">
                 {{@global.LANGUAGE.ALARM_MSG24}}
                 <label class="label-switch">
                     <input type="checkbox" name="checkbox-alarm" {{#if alarm}} checked="checked" {{/if}}>
                     <div class="checkbox"></div>
                 </label> 
             </div> 	
-	  		<div class="list-block layout-dark media-list alarm_list"> 	  				
+	  		<div class="list-block  media-list alarm_list">
 	  			<ul>
 	  				<li >
 		            	<label class="label-checkbox item-content  " >
@@ -274,14 +274,14 @@
 		        
 	  		</div>
 
-	  		<div class="content-block-title bw-li-switch layout-dark hintParent" data-hint-text="{{@global.LANGUAGE.PROMPT_MSG064}}" data-hint-title="{{@global.LANGUAGE.ALARM_MSG30}}">
+	  		<div class="content-block-title bw-li-switch  hintParent" data-hint-text="{{@global.LANGUAGE.PROMPT_MSG064}}" data-hint-title="{{@global.LANGUAGE.ALARM_MSG30}}">
                 <span class="showHint">{{@global.LANGUAGE.ALARM_MSG30}}</span>
                 <label class="label-switch">
                     <input type="checkbox" class="input-checkbox-alarm" name="checkbox-offline" value="67108864" {{#if offline}} checked="checked" {{/if}}>
                     <div class="checkbox"></div>
                 </label> 
             </div> 	
-	  		<div class="list-block layout-dark media-list alarm_list"> 	  				
+	  		<div class="list-block  media-list alarm_list">
 	  			<ul>
 	  				<li >
 		            	<label class="label-checkbox item-content offline-options-wrapper {{#unless offline}} disabled {{/unless}}" >
@@ -319,14 +319,14 @@
 		        </ul>
 		    </div>
 
-		    <div class="content-block-title bw-li-switch layout-dark hintParent" data-hint-text="{{@global.LANGUAGE.PROMPT_MSG062}}</br>{{@global.LANGUAGE.PROMPT_MSG063}}" data-hint-title="{{@global.LANGUAGE.ALARM_MSG23}}">
+		    <div class="content-block-title bw-li-switch  hintParent" data-hint-text="{{@global.LANGUAGE.PROMPT_MSG062}}</br>{{@global.LANGUAGE.PROMPT_MSG063}}" data-hint-title="{{@global.LANGUAGE.ALARM_MSG23}}">
                 <span class="showHint">{{@global.LANGUAGE.ALARM_MSG23}}</span>
                 <label class="label-switch">
                     <input type="checkbox" class="input-checkbox-alarm" name="checkbox-speeding" value="32" {{#if speeding}} checked="checked" {{/if}}>
                     <div class="checkbox"></div>
                 </label> 
             </div> 	
-			<div class="list-block layout-dark list-block-input">
+			<div class="list-block  list-block-input">
 			  	<ul>			  	 
 			  	  	<li>
 			  	  	  	<label class="label-radio item-content overspeed-radio-wrapper {{#unless speeding}} disabled {{/unless}}">			  	  	  

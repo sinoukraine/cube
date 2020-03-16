@@ -2,28 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>106187216531-endo819n84u9og37oqehia4tjjr12ddf.apps.googleusercontent.com</string>
+	<string>1097482483564-t0q58pfm5ftm9oa0s0rjee0912fe9ja7.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.106187216531-endo819n84u9og37oqehia4tjjr12ddf</string>
+	<string>com.googleusercontent.apps.1097482483564-t0q58pfm5ftm9oa0s0rjee0912fe9ja7</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBDxtHG5bNZkgGnCTdXHiwhEnu6X53VM90</string>
+	<string>AIzaSyBIAv1FSX73w5zpZNX3mXeUl-DkyN6r7EA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>106187216531</string>
+	<string>1097482483564</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.sinopacific.quiktrak</string>
+	<string>com.sinopacific.cube</string>
 	<key>PROJECT_ID</key>
-	<string>gps-installer</string>
+	<string>quiktrak-1a820</string>
 	<key>STORAGE_BUCKET</key>
-	<string>gps-installer.appspot.com</string>
+	<string>quiktrak-1a820.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
@@ -33,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:106187216531:ios:8af9ccc877a0f426</string>
+	<string>1:1097482483564:ios:778c5c1b159bf7d98d2549</string>
 	<key>DATABASE_URL</key>
-	<string>https://gps-installer.firebaseio.com</string>
+	<string>https://quiktrak-1a820.firebaseio.com</string>
 </dict>
 </plist>

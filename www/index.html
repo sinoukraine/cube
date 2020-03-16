@@ -11,7 +11,7 @@
     <!-- Color theme for statusbar -->
     <!-- <meta name="theme-color" content="#2196f3"> -->
     <!-- Your app title -->
-    <title>QuikTrak</title>
+    <title>Cube TrackIT</title>
 
     <!-- Cropper Camer -->
     <link rel="stylesheet" href="resources/plugins/cropper/css/cropper.min.css" type="text/css" charset="utf-8"/>
@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="resources/app/my-app.css">
 
   </head>
-  <body class="theme-red theme-dealer " >
+  <body class="theme-green theme-dealer " >
     <div class="statusbar-overlay"></div>
 
     <!-- First, we need to add Panel's overlay that will overlays app while panel is opened -->
@@ -52,7 +52,7 @@
             <div class="page-content login-screen-content">
               <form action="" class="login-form">
                 <div class="content-block">
-                  <div class="logo"><img src="resources/images/logo.png" /></div>
+                  <div class="logo"><img src="resources/images/logo-login.png" /></div>
                 </div>
                 <div class="list-block login_list">
                   <ul>
@@ -76,7 +76,7 @@
                       </div>
                     </li> 
                     <li class="forget_pwd_wrapper">       
-                      <a href="resources/templates/forgotPwd.html" class="color-white forgetPwd ">{{@global.LANGUAGE.LOGIN_MSG05}}</a>          
+                      <a href="resources/templates/forgotPwd.html" class="color-black forgetPwd ">{{@global.LANGUAGE.LOGIN_MSG05}}</a>
                     </li>             
                   </ul>
                 </div>          
@@ -101,7 +101,7 @@
       <div class="panel panel-left panel-cover">
         <div class="menu_wrapper">
           <div class="menu_header">
-            <img class="vertical-center" src="resources/images/logo.png" alt="">
+            <img class="vertical-center" src="resources/images/logo-login.png" alt="">
           </div>
           <div class="list-block menu" id="menu">
             <div class="list-group">
@@ -193,10 +193,7 @@
               {{@global.LANGUAGE.COM_MSG32}}: <span class="remaining_counter">---</span>
             </div> -->
           </div>
-          <!-- <div class="menu_remainings">
-            {{@global.LANGUAGE.COM_MSG32}}: <span class="remaining_counter">---</span>
-          </div>-->
-                  </div> 
+        </div>
       </div>
     </script>
  
@@ -210,7 +207,7 @@
           <!-- <script type="text/template7" id="template_AssetList" > -->
    
               <!-- Top Navbar. In Material theme it should be inside of the page-->
-            <div class="navbar color-black">
+            <div class="navbar">
                 <div class="navbar-inner">
                     <div class="left">
                         <a href="#" class="link icon-only open-panel "> <i class="f7-icons icon-header-menu"></i></a>
@@ -236,23 +233,23 @@
                 </div>                
             </div>            
               
-            <div class="pages navbar-through toolbar-through layout-dark">        
+            <div class="pages navbar-through toolbar-through ">
                 <div data-page="index" class="page bg-color-page with-subnavbar">                         
                     <div class="searchbar-overlay"></div>                    
                   
-                    <div class="float_button_wrapper view_all_button_wrapper bg-white">
-                      <a href="#" class="link color-black viewAllButton"  >
-                          <i class="f7-icons icon-show-assets color-black"></i>
+                    <div class="float_button_wrapper view_all_button_wrapper bg-dealer">
+                      <a href="#" class="link color-white viewAllButton"  >
+                          <i class="f7-icons icon-show-assets color-white"></i>
                           <span class="view-all-text">View All</span>              <!-- {{@global.LANGUAGE.COM_MSG55}} -->      
                       </a>
                     </div>
             
                     <div class="page-content">
-                        <div class="content-block index-search-nothing-found searchbar-not-found color-white">
+                        <div class="content-block index-search-nothing-found searchbar-not-found ">
                             Nothing found
                             <!-- {{@global.LANGUAGE.COM_MSG05}}-->
                         </div>
-                        <div class="list-block media-list no-hairlines virtual-list layout-dark list-block-search assets_list" >            
+                        <div class="list-block media-list no-hairlines virtual-list  list-block-search assets_list" >
                         
                         </div>
                     </div>
