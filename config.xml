@@ -49,7 +49,7 @@
     <preference name="phonegap-version" value="cli-9.0.0" />
 
     <preference name="android-build-tool" value="gradle" />
-    <plugin name="phonegap-plugin-push" source="npm" spec="2.1.2">
+    <plugin name="phonegap-plugin-push" source="npm" spec="2.3.0">
         <variable name="SENDER_ID" value="1097482483564" />
     </plugin>
     <platform name="android">
