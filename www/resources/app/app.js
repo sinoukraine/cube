@@ -110,7 +110,8 @@ $$('#app').append(compiledTemplate());
 
 // Init App
 const app = new Framework7({
-    id: Framework7.device.ios ? 'com.sinopacific.cube' : 'com.m2mdata.cubetrackit',
+    //id: Framework7.device.ios ? 'com.sinopacific.cube' : 'com.m2mdata.cubetrackit',
+    id: 'com.sinopacific.cube',
     name: 'Cube TrackIT',
     root: '#app',
     theme: Framework7.device.ios ? 'ios' : 'md',
